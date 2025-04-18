@@ -1,11 +1,12 @@
+
 import React, { useEffect } from "react";
 import { FaRegStar } from "react-icons/fa";
 import { NavLink } from "react-router";
 const SingleBooks = ({SingleBook}) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
-useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <NavLink to={`/bookDetails/${SingleBook.bookId}`}>
@@ -31,6 +32,7 @@ useEffect(() => {
         </div>
       </div>
     </div>
+
     </NavLink>
   );
 };
