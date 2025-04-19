@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="navbar bg-base-100 shadow-sm px-[5%]">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} role="button" className="btn  lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -26,24 +26,37 @@ const NavBar = () => {
 
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-white rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-white gap-2 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-
-                <Link to={"/"} className="font-semibold">
-                Home
-                </Link>
+                <NavLink
+                  to={"/"}
+                  className={({isActive}) =>
+                    `font-semibold ${isActive ? "bg-green-600" : ""}`
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
               <li>
-
-                <Link to={"/about"} className="font-semibold">
-                Listed Books
-                </Link>
+                <NavLink
+                  to={"/about"}
+                  className={({isActive}) =>
+                    `font-semibold ${isActive ? "bg-green-600" : ""}`
+                  }
+                >
+                  About
+                </NavLink>
               </li>
               <li>
-                <Link to={"/readList"} className="font-semibold">
-                  Read Lists
-                </Link>
+                <NavLink
+                  to={"readList"}
+                  className={({isActive}) =>
+                    `font-semibold ${isActive ? "bg-green-600" : ""}`
+                  }
+                >
+                  Read List
+                </NavLink>
               </li>
               <li>
                 <div>
@@ -61,12 +74,12 @@ const NavBar = () => {
         </div>
 
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal gap-3 px-1">
             <li>
               <NavLink
                 to={"/"}
                 className={({isActive}) =>
-                  `font-semibold ${isActive ? "bg-green-600" : ""}`
+                  `font-semibold ${isActive ? "bg-green-600 text-white " : ""}`
                 }
               >
                 Home
@@ -76,7 +89,7 @@ const NavBar = () => {
               <NavLink
                 to={"/about"}
                 className={({isActive}) =>
-                  `font-semibold ${isActive ? "bg-green-600" : ""}`
+                  `font-semibold ${isActive ? "bg-green-600 text-white" : ""}`
                 }
               >
                 About
@@ -86,7 +99,7 @@ const NavBar = () => {
               <NavLink
                 to={"readList"}
                 className={({isActive}) =>
-                  `font-semibold ${isActive ? "bg-green-600" : ""}`
+                  `font-semibold ${isActive ? "bg-green-600 text-white" : ""}`
                 }
               >
                 Read List

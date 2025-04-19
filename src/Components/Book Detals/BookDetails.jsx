@@ -1,8 +1,8 @@
 import React, {useEffect} from "react";
 
-import { useLoaderData, useParams} from "react-router";
+import {useLoaderData, useParams} from "react-router";
 import {addTostoredDB} from "../../Utilityes/addToDb";
-
+import {addTowishList} from "../../Utilityes/AdToWhitelist";
 const BookDetails = () => {
   const {id} = useParams();
   const data = useLoaderData();
@@ -12,6 +12,9 @@ const BookDetails = () => {
 
   const handleMarkAsRead = () => {
     addTostoredDB(id);
+  };
+  const handleWishList = () => {
+    addTowishList(id);
   };
 
   useEffect(() => {
@@ -73,8 +76,6 @@ const BookDetails = () => {
         </h1>
 
         <div className="lg:w-2/3 grid md:grid-cols-2 gap-5">
-
-
           <button
             onClick={() => handleMarkAsRead(id)}
             className="btn bg-white border-2 border-black font-bold hover:scale-105 transition-transform hover:bg-green-700 hover:text-white"
@@ -82,9 +83,10 @@ const BookDetails = () => {
             Mark As Read
           </button>
 
-
-          <button className="btn bg-blue-400 border-2 text-white  font-bold border-black hover:scale-105 transition-transform hover:bg-green-700 ">
-
+          <button
+            onClick={()=>handleWishList(id)}
+            className="btn bg-blue-400 border-2 text-white  font-bold border-black hover:scale-105 transition-transform hover:bg-green-700 "
+          >
             Add To Wishlist
           </button>
         </div>
@@ -92,8 +94,5 @@ const BookDetails = () => {
     </div>
   );
 };
-
-
-
 
 export default BookDetails;
