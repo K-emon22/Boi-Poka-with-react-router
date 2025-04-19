@@ -2,8 +2,6 @@ import React from "react";
 import {MdStarOutline} from "react-icons/md";
 import {Link} from "react-router";
 const WishListedBook = ({list}) => {
-  console.log(list);
-
   return (
     <div className="">
       <div className="grid grid-cols-5  rounded-lg border h-full p-5 gap-20 ">

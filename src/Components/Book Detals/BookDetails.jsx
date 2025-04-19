@@ -2,7 +2,7 @@ import React, {useEffect} from "react";
 
 import {useLoaderData, useParams} from "react-router";
 import {addTostoredDB} from "../../Utilityes/addToDb";
-import {addTowishList} from "../../Utilityes/AdToWhitelist";
+import {addTostoredDBWishList} from "../../Utilityes/AdToWhitelist";
 const BookDetails = () => {
   const {id} = useParams();
   const data = useLoaderData();
@@ -14,7 +14,7 @@ const BookDetails = () => {
     addTostoredDB(id);
   };
   const handleWishList = () => {
-    addTowishList(id);
+    addTostoredDBWishList(id);
   };
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const BookDetails = () => {
           </button>
 
           <button
-            onClick={()=>handleWishList(id)}
+            onClick={() => handleWishList(id)}
             className="btn bg-blue-400 border-2 text-white  font-bold border-black hover:scale-105 transition-transform hover:bg-green-700 "
           >
             Add To Wishlist

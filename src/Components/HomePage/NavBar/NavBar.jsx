@@ -7,7 +7,7 @@ const NavBar = () => {
       <div className="navbar bg-base-100 shadow-sm px-[5%]">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn  lg:hidden">
+            <div tabIndex={0} role="button" className=" p-5 pl-0 lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -112,7 +112,7 @@ const NavBar = () => {
           <button className="btn bg-green-600 hidden lg:block text-white hover:scale-105 transition-transform">
             Sign In
           </button>
-          <button className="btn bg-blue-400 text-white hover:scale-105 transition-transform">
+          <button className="btn bg-blue-400  text-white hover:scale-105 transition-transform">
             Sign Up
           </button>
         </div>

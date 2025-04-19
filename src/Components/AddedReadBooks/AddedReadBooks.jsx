@@ -2,10 +2,17 @@ import React from "react";
 import {MdStarOutline} from "react-icons/md";
 import {Link} from "react-router";
 const AddedReadBooks = ({list}) => {
-  console.log(list);
 
+
+  
   return (
+
+
+
+
+
     <div className="">
+
       <div className="grid grid-cols-5  rounded-lg border h-full p-5 gap-20 ">
         <div className=" bg-[#F3F3F3] flex my-auto rounded-lg py-5">
           <img
@@ -30,7 +37,7 @@ const AddedReadBooks = ({list}) => {
             {list.bookName}
           </h1>
           <h1>By: {list.author}</h1>
-          
+
           <div className=" flex flex-row justify-between">
             <h1>{list.category}</h1>
             <div>

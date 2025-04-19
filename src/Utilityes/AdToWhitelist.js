@@ -2,7 +2,7 @@ import {toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const addTowishList = () => {
-  const storedBookString = localStorage.getItem("readList");
+  const storedBookString = localStorage.getItem("wishList");
 
   if (storedBookString) {
     const storedBooksData = JSON.parse(storedBookString);
@@ -30,7 +30,7 @@ const addTostoredDBWishList = (id) => {
     });
   } else {
     storedBookData.push(id);
-    localStorage.setItem("readList", JSON.stringify(storedBookData));
+    localStorage.setItem("wishList", JSON.stringify(storedBookData));
 
     toast("✅ নতুন বই সফলভাবে উইসলিস্টে যোগ হয়েছে!", {
       icon: "📘",
